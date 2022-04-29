@@ -22,10 +22,43 @@
 </head>
 
 <body>
-  <%- include ('partials/_headerEmpty')%>
+  <%- include ('partials/_header', {user}, {org}) %>
   <main style="margin: 1em;">
-    <h3>Nothing because you are not logged in</h3>
-
+    <h3>My Accounts</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">URL</th>
+          <th scope="col">Name</th>
+          <th scope="col">Category</th>
+          <th scope="col">Username</th>
+          <th scope="col">Site Password</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let i=0; i< accounts.length; i++) { %>
+          <tr>
+            <td><a href="https://<%= accounts[i].url %>"><%= accounts[i].url %></td>
+            <td><%= accounts[i].name %></td>
+            <td><%= accounts[i].category %></td>
+            <td><%= accounts[i].username %></td>
+            <td><%= accounts[i].password %></td>
+            <td>
+              <form method="GET" action="/urls/<%=accounts[i]%>/<%=user.id%>">
+                <button type = "submit">Edit</button>
+              </form>
+            </td>
+            <td>
+              <form method="POST" action="/urls/<%=accounts[i]%>/delete/<%=user.id%>">
+                <button type = "submit">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
   </main>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

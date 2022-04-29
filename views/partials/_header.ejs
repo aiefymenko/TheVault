@@ -1,13 +1,17 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-success">
-    <a class="navbar-brand" href="/urls/<%=user.id%>">TinyApp</a>
+    <a class="navbar-brand" href="/accounts/<%=user.id%>">The Vault</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link" href="/urls/<%=user.id%>">My URLs</a>
-        <a class="nav-item nav-link" href="/urls/new/<%=user.id%>">Create New URL</a>
+        <a class="nav-item nav-link" href="/accounts/<%=user.id%>">Accounts</a>
+        <a class="nav-item nav-link" href="/accounts/new/<%=user.id%>">Create New Account</a>
+        <a class="nav-item nav-link" href="/urls/new/<%=user.id%>">Generate New Password</a>
+      </div>
+      <div class="navbar-nav" style = "position:sticky; left:1800px;">
+            <text>🏠 - <%=org.name%></text>
       </div>
     </div>
   </nav>
