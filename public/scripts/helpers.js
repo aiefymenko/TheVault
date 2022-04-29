@@ -1,5 +1,9 @@
-const copyToClickBoard = (id) => {
+const copyUsernameToClickBoard = (id) => {
 // get the text from the DOM Element:
 navigator.clipboard.writeText(document.getElementById(id).innerHTML)
-console.log(document.getElementById(id))
 }
+
+const copyPasswordToClickBoard = (id) => {
+  // get the text from the DOM Element:
+  navigator.clipboard.writeText(document.getElementById(id).innerHTML)
+  }

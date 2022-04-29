@@ -44,10 +44,13 @@
             <td><%= accounts[i].name %></td>
             <td><%= accounts[i].category %></td>
             <td> <span id = "<%=i%>"><%= accounts[i].username %></span>
-              <span><button id="btn" onclick="copyToClickBoard('<%=i%>')">Copy</button></span>
+                <span><button id="btn" onclick="copyUsernameToClickBoard('<%=i%>')">Copy</button></span>
             </td>
 
-            <td><%= accounts[i].password %></td>
+            <td>
+            <span id = "i<%=i%>"><%= accounts[i].password %></span>
+                <span><button id="btn" onclick="copyPasswordToClickBoard('i<%=i%>')">Copy</button></span>
+              </td>
             <td>
               <form method="GET" action="/urls/<%=accounts[i]%>/<%=user.id%>">
                 <button type = "submit">Edit</button>
