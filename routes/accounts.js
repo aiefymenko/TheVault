@@ -90,27 +90,5 @@ module.exports = (db) => {
       });
   });
 
-
-
-  // // To be removed: Create URL record
-  // app.post("/urls/:id", (req, res) => {
-  //   const user = users[req.params.id];
-
-  //   // user doesn't exist
-  //   if (!user) {
-  //     return res.status(400).send("Invalid credentials");
-  //   }
-
-  //   // user exists and we generate a record in our url database
-  //   let shortURL = generateRandomString();
-  //   urlDatabase[shortURL] = {};
-  //   urlDatabase[shortURL]["longURL"] = req.body.longURL;
-  //   urlDatabase[shortURL]["userID"] = user.id;
-
-  //   res.redirect(`/urls/${user.id}`);
-  // })
-
-
-
   return router;
 };
