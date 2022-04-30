@@ -1,18 +1,17 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark bg-success">
-    <a class="navbar-brand" href="/login/<%=user.id%>">The Vault</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" href="/login/<%=user.id%>">Accounts</a>
-        <a class="nav-item nav-link" href="/account/new/">Create New Account</a>
-        <a class="nav-item nav-link" href="/urls/new/<%=user.id%>">Generate New Password</a>
-      </div>
-      <div class="navbar-nav" style = "position:sticky; left:1800px;">
-            <text>🏠 - <%=org.name%></text>
+  <nav class="nav">
+    <div class="title-links">
+      <a class="title" href="/login/<%=user.id%>">The Vault</a>
+      <div class="links">
+        <a class="link" href="/login/<%=user.id%>">Accounts</a>
+        <a class="link" href="/account/new/">Create New Account</a>
+        <a class="link" href="/urls/new/<%=user.id%>">Generate New Password</a>
       </div>
     </div>
+      <div class="organization-user">
+        <p> <%=org.name%> </p>
+        <p>👤 <%=user.id%> </p>
+        <!-- figure our how to display username -->
+      </div>
   </nav>
 </header>
