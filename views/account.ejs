@@ -58,13 +58,14 @@
             </button>
               </td>
             <td>
-              <form method="GET" action="/urls/<%=accounts[i]%>/<%=user.id%>">
+              <form method="GET" action="/accounts/edit/<%=accounts[i].id%>">
                 <button type = "submit" class = "btn btn-outline-primary">Edit</button>
               </form>
             </td>
             <td>
-              <form method="POST" action="/urls/<%=accounts[i]%>/delete/<%=user.id%>">
+              <form method="POST" action="/accounts/delete/<%=accounts[i].id%>">
                 <button type = "submit" class = "btn btn-outline-danger">Delete</button>
+
               </form>
             </td>
           </tr>

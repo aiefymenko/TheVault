@@ -12,11 +12,11 @@
 
   <body>
 
-    <%- include('partials/_header', {user}) %>
+    <%- include('partials/_header', {user}, {org}) %>
 
     <main style="margin: 1em;">
       <h3>Create New Account</h3>
-      <form class="form-inline" action="/new/<%=user.id%>" method="POST">
+      <form class="form-inline" action="/accounts/new" method="POST">
         <div class="form-group mb-2">
           <label for="url">URL:</label>
           <input class="form-control" type="text" name="url" placeholder="http://" style="width: 300px; margin: 1em">

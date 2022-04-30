@@ -6,20 +6,15 @@
  */
 
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
+const cookieSession = require('cookie-session');
+
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users;`)
-      .then(data => {
-        const users = data.rows;
-        res.json({ users });
-      })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
-      });
+  router.get("/:id", (req, res) => {
+    req.session.user_id = req.params.id;
+    res.redirect('/accounts');
   });
+
   return router;
 };
