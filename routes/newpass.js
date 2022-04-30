@@ -11,9 +11,8 @@ const cookieSession = require('cookie-session');
 
 
 module.exports = (db) => {
-  router.get("/:id", (req, res) => {
-    req.session.user_id = req.params.id;
-    res.redirect('/accounts');
+  router.get("/", (req, res) => {
+
   });
 
   return router;
