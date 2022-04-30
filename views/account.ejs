@@ -45,21 +45,26 @@
             <td><%= accounts[i].name %></td>
             <td><%= accounts[i].category %></td>
             <td> <span id = "<%=i%>"><%= accounts[i].username %></span>
-                <button type="button" class="btn btn-link" onclick="copyUsernameToClickBoard('<%=i%>')"><span class="bi bi-clipboard"></span></button>
+                  <button type="button" class="btn btn-outline-primary" onclick="copyUsernameToClickBoard('<%=i%>')">
+                    <span class="bi bi-clipboard">
+                    </span>
+                  </button>
             </td>
-
             <td>
             <span id = "i<%=i%>"><%= accounts[i].password %></span>
-            <button type="button" class="btn btn-link" onclick="copyPasswordToClickBoard('i<%=i%>')"><span class="bi bi-clipboard"></span></button>
+            <button type="button" class="btn btn-outline-primary" onclick="copyPasswordToClickBoard('i<%=i%>')">
+              <span class="bi bi-clipboard">
+              </span>
+            </button>
               </td>
             <td>
               <form method="GET" action="/urls/<%=accounts[i]%>/<%=user.id%>">
-                <button type = "submit">Edit</button>
+                <button type = "submit" class = "btn btn-outline-primary">Edit</button>
               </form>
             </td>
             <td>
               <form method="POST" action="/urls/<%=accounts[i]%>/delete/<%=user.id%>">
-                <button type = "submit">Delete</button>
+                <button type = "submit" class = "btn btn-outline-danger">Delete</button>
               </form>
             </td>
           </tr>
