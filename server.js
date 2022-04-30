@@ -8,6 +8,8 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const bodyParser = require('body-parser');
+const cookieSession = require('cookie-session');
+
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -22,6 +24,11 @@ app.use(morgan("dev"));
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}));
+
 
 app.use(
   "/styles",
@@ -36,12 +43,13 @@ app.use(express.static("public"));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
-const accountsRoutes = require("./routes/accounts");
+const loginRoutes = require("./routes/login");
+const accountRoutes = require("./routes/account");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-app.use("/accounts/", accountsRoutes(db));
-
+app.use("/login/", loginRoutes(db));
+app.use("/account/", accountRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
