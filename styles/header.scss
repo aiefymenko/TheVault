@@ -1,0 +1,47 @@
+header {
+  background-color: rgb(186, 13, 13);
+  padding: 10px 20px;
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title-links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .title {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #f1f1f1;
+        margin-right: 20px;
+        text-decoration: none;
+      }
+
+      .links {
+        a {
+          color: rgba(255, 255, 255, 0.673);
+          margin:0 5px;
+          text-decoration: none;
+        }
+      // links end
+      }
+    //title-links end
+    }
+
+    .organization-user {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        margin: 0;
+        color: #f1f1f1;
+      }
+    }
+//nav end
+  }
+// header end
+}
