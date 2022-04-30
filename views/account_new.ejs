@@ -4,10 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-account.css" type="text/css" />
 
     <title>New Account - The Vault</title>
   </head>
@@ -16,23 +20,37 @@
 
     <%- include('partials/_header', {user}, {org}) %>
 
-    <main style="margin: 1em;">
-      <h3>Create New Account</h3>
-      <form class="form-inline" action="/new" method="POST">
-        <div class="form-group mb-2">
-          <label for="url">URL:</label>
-          <input class="form-control" type="text" name="url" placeholder="http://" style="width: 300px; margin: 1em">
-          <label for="name">Name:</label>
-          <input class="form-control" type="text" name="name" style="width: 300px; margin: 1em">
-          <label for="category">Category:</label>
-          <input class="form-control" type="text" name="category" style="width: 300px; margin: 1em">
-          <label for="username">Username:</label>
-          <input class="form-control" type="text" name="username" style="width: 300px; margin: 1em">
-          <label for="password">Site Password</label>
-          <input class="form-control" type="text" name="password" style="width: 300px; margin: 1em">
-          <button type="submit" class="btn btn-primary">Submit</button>
+    <main>
+      <div class="form-container">
+        <div class="new-form">
+          <h3>Create New Account</h3>
+          <form class="" action="/new" method="POST">
+            <div class="form-labels">
+              <label for="url">URL:</label>
+              <input class="input" type="text" name="url" placeholder="http://">
+              <label for="name">Name:</label>
+              <input class="input" type="text" name="name">
+              <label for="category">Category:</label>
+              <select class="input" name="category" id="category">
+                <option class="social" value="Social Media">Social Media</option>
+                <option class="shopping" value="Shopping">Shopping</option>
+                <option class="email" value="Email">Email</option>
+                <option class="streaming" value="Online Streaming">Online Streaming</option>
+                <option  class="education" value="Education">Education</option>
+              </select>
+              <!-- <input class="input" type="text" name="category"> -->
+              <label for="username">Username:</label>
+              <input class="input" type="text" name="username">
+              <label for="password">Site Password</label>
+              <input class="input" type="text" name="password">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
         </div>
-      </form>
+        <div class="image">
+          <img src="https://www.hexamail.com/hexamailvault/images/slidersplash.jpg" alt="">
+        </div>
+      </div>
     </main>
       <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
