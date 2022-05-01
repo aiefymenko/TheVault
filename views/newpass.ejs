@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- links -->
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-account.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/styles/style.css">
+
+    <title>Password Generator</title>
+
+  </head>
+
+  <body>
+
+    <%- include('partials/_header', {user}, {org}) %>
+
+    <main>
+      <div class="wrapper">
+        <button id="generate" class="action-btn">
+            Generate Password <i class="fab fa-keycdn"></i>
+        </button>
+        <div class="slider_main">
+            <input type="range" value="8" min="1" max="25" class="slider"
+                oninput="this.nextElementSibling.value = this.value" id="slider">
+            <output>8</output>
+        </div>
+        <label class="container" style="font-family: fantasy;color: rgb(3, 3, 3);">Include special characters
+            <input type="checkbox" checked="checked" id="checkbox_symbols">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container" style="font-family: fantasy;color: rgb(3, 3, 3);">Include uppercase characters
+          <input type="checkbox" checked="checked" id="checkbox_uppercase">
+          <span class="checkmark"></span>
+      </label>
+    </label>
+    <label class="container" style="font-family: fantasy;color: rgb(3, 3, 3);">Include lowercase characters
+      <input type="checkbox" checked="checked" id="checkbox_lowercase">
+      <span class="checkmark"></span>
+  </label>
+</label>
+<label class="container" style="font-family: fantasy;color: rgb(3, 3, 3);">Include numbers
+  <input type="checkbox" checked="checked" id="checkbox_numbers">
+  <span class="checkmark"></span>
+</label>
+    </div>
+
+
+
+    <div class="wrapper_main">
+        <h5 id="pwd_txt"></h5>
+        <button id="clipboard" class="clipboard">
+            <i class="fas fa-clipboard"></i>
+        </button>
+    </div>
+    <div class="position-fixed top-0 right-0 p-3" style="z-index: 5; right: 45%; top: 2%;">
+      <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+        <div class="toast-header">
+          <strong class="mr-auto">Copied</strong>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body">
+          Hello, world! This is a toast message.
+        </div>
+      </div>
+    </div>
+    </main>
+      <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/scripts/script.js"></script>
+  </body>
+</html>
