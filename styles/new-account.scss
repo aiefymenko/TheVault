@@ -1,16 +1,19 @@
+@import "_variables";
+
 main {
-  background-color: #f1f1f1;
+  background-color: $offWhite;
   height: 100vh;
   padding: 40px 0;
 
   .form-container {
     display: flex;
     width: 70%;
-    height: 500px;
+    height: 450px;
     margin: auto;
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid $mainRed;
     border-radius: 20px;
+    box-shadow: 10px 15px rgba(21, 21, 21, 0.486);
     padding: 20px 30px;
 
 
@@ -20,9 +23,12 @@ main {
       flex-direction: column;
       width: 50%;
       align-content: space-between;
+      justify-content: center;
 
       h3 {
+        font-family: $fontForm;
         text-align: center;
+        padding-bottom: 20px;
       }
 
       .form-labels {
@@ -30,16 +36,43 @@ main {
         flex-direction: column;
         align-content: space-around;
 
+        .fields {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        label {
+          font-family: $fontForm;
+          text-align: center;
+        }
+
         .input {
-          margin-bottom: 5px;
+          padding: 5px;
+          margin-right: 50px;
+          margin-bottom: 10px;
           width: 70%;
+          border: 1px solid $mainRed;
+        }
+
+        .select {
+
+          color: rgba(0, 0, 0, 0.59);
         }
       }
 
-      button {
-        margin-top: 15px;
-        width: 30%;
+      .buttons {
+        display: flex;
+        justify-content: space-evenly;
+
+        .btn {
+          margin-top: 15px;
+          text-align: center;
+          background-color: $mainRed;
+          color: $offWhite;
+          width: 40%;
+        }
       }
+
     }
 
     .image {
