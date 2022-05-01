@@ -7,13 +7,66 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-    <title>New Account - The Vault</title>
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-account.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@1&display=swap" rel="stylesheet">
+
+    <title>Edit Account - The Vault</title>
   </head>
 
   <body>
 
     <%- include('partials/_header', {user}, {org}) %>
 
+
+    <main>
+      <div class="form-container">
+        <div class="new-form">
+          <h3>Create New Account</h3>
+          <form class="" action="/new" method="POST">
+            <div class="form-labels">
+              <div class="fields">
+                <label for="url">URL</label>
+                <input class="input" type="text" name="url" value="<%=account.url%>" placeholder="http://">
+              </div>
+              <div class="fields">
+                <label for="name">Name</label>
+                <input class="input" type="text" name="name" value="<%=account.name%>">
+              </div>
+              <div class="fields">
+                <label for="category">Category:</label>
+                <input class="input" type="text" name="category" value = "<%=account.category_name%>">
+                <!-- add in when selected put the select feature -->
+                <!-- <label for="category">Category</label>
+                <select class="input select" name="category" id="category" value="<%=account.category%>">
+                  <option class="social" value="Social Media">Social Media</option>
+                  <option class="shopping" value="Shopping">Shopping</option>
+                  <option class="email" value="Email">Email</option>
+                  <option class="streaming" value="Online Streaming">Online Streaming</option>
+                  <option  class="education" value="Education">Education</option>
+                </select> -->
+                </div>
+              <!-- <input class="input" type="text" name="category"> -->
+              <div class="fields">
+                <label for="username">Username</label>
+                <input class="input" type="text" name="username" value="<%=account.username%>">
+              </div>
+              <div class="fields">
+                <label for="password">Password</label>
+                <input class="input" type="text" name="password" value="<%=account.password%>">
+              </div>
+                <button type="submit" class="btn">Edit</button>
+            </div>
+          </form>
+        </div>
+        <div class="image">
+          <img src="https://www.hexamail.com/hexamailvault/images/slidersplash.jpg" alt="">
+        </div>
+      </div>
+    </main>
+<!--
     <main style="margin: 1em;">
       <h3>Update New Account</h3>
       <form class="form-inline" action="/accounts/edit/<%=account.id%>" method="POST">
@@ -31,7 +84,7 @@
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
       </form>
-    </main>
+    </main> -->
       <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
