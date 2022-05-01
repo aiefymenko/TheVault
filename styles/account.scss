@@ -75,10 +75,25 @@ main {
   margin-top: 10px;
 }
 
+.hidden-pw {
+  border: none;
+  padding-bottom: 15px;
+}
+
+.pass-btn {
+  i {
+    margin-right: 5px;
+  }
+}
+
 .form-btns {
   display: flex;
   justify-content: space-evenly;
   margin-top: 20px;
+}
+
+.hide {
+  display: none;
 }
 
 
