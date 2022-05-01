@@ -1,0 +1,84 @@
+@import "_variables";
+
+main {
+  background-color: $offWhite;
+  min-height: 100vh;
+
+  h3 {
+    text-align: center;
+    padding: 20px 0;
+  }
+}
+
+.main-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  padding: 20px;
+  border: 1px solid $mainRed;
+  border-radius: 20px;
+  background-color: white;
+  margin-bottom: 20px;
+  width: 40%
+}
+
+.cards:hover {
+  box-shadow: $boxShadow;
+}
+
+.org-name {
+  text-align: center;
+  h4 {
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 10px;
+  }
+}
+
+.site-category {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: $fontForm;
+  font-size: 1.2rem;
+
+  .link {
+    color: black;
+    text-decoration: none;
+    font-family: $fontForm;
+  }
+
+  .link:hover {
+    color: $mainRed
+  }
+}
+
+.user-pass {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+
+  p {
+    font-weight: 500;
+  }
+
+}
+
+.password {
+  margin-top: 10px;
+}
+
+.form-btns {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+

@@ -12,7 +12,11 @@
   <link rel="stylesheet" href="/styles/main.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css">
-  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
+  <link rel="stylesheet" href="/styles/account.css" type="text/css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@1&family=Roboto:wght@500&display=swap" rel="stylesheet">
 
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
@@ -30,53 +34,43 @@
 
 <body>
   <%- include ('partials/_header', {user}, {org}) %>
-  <main style="margin: 1em;">
-    <h3>My Accounts</h3>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">URL</th>
-          <th scope="col">Name</th>
-          <th scope="col">Category</th>
-          <th scope="col">Username</th>
-          <th scope="col">Site Password</th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% for(let i=0; i< accounts.length; i++) { %>
-          <tr>
-            <td><a href="https://<%= accounts[i].url %>"><%= accounts[i].url %></td>
-              <td><%= accounts[i].name %></td>
-              <td><%= accounts[i].category %></td>
-              <td> <span id = "<%=i%>"><%= accounts[i].username %></span>
-                    <button type="button" class="btn btn-outline-primary" onclick="copyUsernameToClickBoard('<%=i%>')">
-                      <span class="bi bi-clipboard">
-                      </span>
-                    </button>
-              </td>
-              <td>
-              <span id = "i<%=i%>"><%= accounts[i].password %></span>
-              <button type="button" class="btn btn-outline-primary" onclick="copyPasswordToClickBoard('i<%=i%>')">
-                <span class="bi bi-clipboard">
-                </span>
-              </button>
-                </td>
-              <td>
-                <form method="GET" action="/accounts/edit/<%=accounts[i].id%>">
-                  <button type = "submit" class = "btn btn-outline-primary">Edit</button>
-                </form>
-              </td>
-              <td>
-                <form method="POST" action="/accounts/delete/<%=accounts[i].id%>">
-                  <button type = "submit" class = "btn btn-outline-danger">Delete</button>
-              </form>
-            </td>
-          </tr>
-        <% } %>
-      </tbody>
-    </table>
+  <main>
+    <h3>Accounts</h3>
+    <div class="main-container">
+      <% for(let i=0; i< accounts.length; i++) { %>
+        <div class="cards">
+          <div class="org-name">
+            <h4><%= accounts[i].name %></h4>
+          </div>
+          <div class="site-category">
+            <a class="link" href="https://<%= accounts[i].url %>" target="blank"><%= accounts[i].url %></a>
+            <p><%= accounts[i].category %></p>
+          </div>
+          <div class="username user-pass">
+            <p>Username:</p>
+            <span id="<%=i%>"><%= accounts[i].username %></span>
+            <button type="button" class="btn btn-outline-primary" onclick="copyUsernameToClickBoard('<%=i%>')">
+              <span class="bi bi-clipboard"></span>
+            </button>
+          </div>
+          <div class="password user-pass">
+            <p>Password:</p>
+            <span id = "i<%=i%>"><%= accounts[i].password %></span>
+            <button type="button" class="btn btn-outline-primary" onclick="copyPasswordToClickBoard('i<%=i%>')">
+              <span class="bi bi-clipboard"></span>
+            </button>
+          </div>
+          <div class="form-btns">
+            <form method="GET" action="/accounts/edit/<%=accounts[i].id%>">
+              <button type = "submit" class = "btn btn-outline-primary">Edit</button>
+            </form>
+            <form method="POST" action="/accounts/delete/<%=accounts[i].id%>">
+              <button type = "submit" class = "btn btn-outline-danger">Delete</button>
+            </form>
+          </div>
+        </div>
+      <% } %>
+    </div>
     <div class="position-fixed top-0 right-0 p-3" style="z-index: 5; right: 45%; top: 2%;">
       <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
         <div class="toast-header">
@@ -90,6 +84,7 @@
         </div>
       </div>
     </div>
+
   </main>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
