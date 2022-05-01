@@ -4,23 +4,18 @@
 <head>
   <title>Home Page</title>
 
-  <!-- font awesome -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> -->
+  <!-- style sheets -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css">
   <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
   <link rel="stylesheet" href="/styles/account.css" type="text/css"/>
+
+  <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@1&family=Roboto:wght@500&display=swap" rel="stylesheet">
-
-
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,6 +23,9 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
   <title>The Vault</title>
 
 </head>
@@ -55,17 +53,22 @@
           </div>
           <div class="password user-pass">
             <p>Password:</p>
-            <span id = "i<%=i%>"><%= accounts[i].password %></span>
-            <button type="button" class="btn btn-outline-primary" onclick="copyPasswordToClickBoard('i<%=i%>')">
-              <span class="bi bi-clipboard"></span>
-            </button>
+            <span  class="visiable-pw hide" id="i<%=i%>"><%= accounts[i].password %></span>
+            <input class="hidden-pw" id="i<%=i%>" type="password" name="pass" value="<%= accounts[i].password %>" readonly>
+            <div class="pass-btn">
+              <i class="fa-solid fa-eye eye-open"></i>
+              <i class="fa-solid fa-eye-slash eye-closed hide"></i>
+              <button type="button" class="btn btn-outline-primary" onclick="copyPasswordToClickBoard('i<%=i%>')">
+                <span class="bi bi-clipboard"></span>
+              </button>
+            </div>
           </div>
-          <div class="form-btns">
+          <div class="form-btns toggle-pw">
             <form method="GET" action="/accounts/edit/<%=accounts[i].id%>">
-              <button type = "submit" class = "btn btn-outline-primary">Edit</button>
+              <button type="submit" class="btn btn-outline-primary">Edit</button>
             </form>
             <form method="POST" action="/accounts/delete/<%=accounts[i].id%>">
-              <button type = "submit" class = "btn btn-outline-danger">Delete</button>
+              <button type="submit" class = "btn btn-outline-danger">Delete</button>
             </form>
           </div>
         </div>
@@ -90,7 +93,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="/scripts/helpers.js"></script>
-
+  <script type="text/javascript" src="/scripts/toggle.js"></script>
 </body>
 
 </html>
