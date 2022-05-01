@@ -16,3 +16,7 @@ $('.eye-closed').on('click', () => {
 
 // hide generate Password buttons
 
+$('#generate-new').on('click', () => {
+  alert('click')
+  $('#generate-new').addClass('hide');
+})
