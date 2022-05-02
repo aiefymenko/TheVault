@@ -1,3 +1,5 @@
+@import "_variables";
+
 body{
   min-height: 100%;
   background-color: #2d3436;
@@ -9,7 +11,7 @@ body{
   -webkit-appearance: none;
   width: 70%;
   height: 10px;
-  background: #f7be04;
+  background: $mainRed;
   border-radius: 15px;
   opacity: 1;
   -webkit-transition: .2s;
@@ -33,9 +35,9 @@ body{
   }
 
   .action-btn{
-  background-color: #000;
+  background-color: $mainRed;
   border: 0;
-  color: #f7be04;
+  color: $offWhite;
   font-size: 20px;
   cursor: pointer;
   padding: 10px;
@@ -109,4 +111,28 @@ body{
 
   .clipboard:hover{
   opacity: 0.5;
+  }
+
+  .alert {
+    padding: 20px;
+    background-color: $mainRed;
+    color: white;
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+  }
+
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .closebtn:hover {
+    color: black;
   }

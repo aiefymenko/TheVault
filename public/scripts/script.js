@@ -1,6 +1,10 @@
+$(document).ready(function() {
+  $('.alert').hide()
+
+
 const password_ele = document.getElementById("pwd_txt");
 let string = "";
-const special_chars = "@#$%^&*";
+const special_chars = "!@#$%^&*_?><.,`'";
 const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numbers = "0123456789";
@@ -10,6 +14,7 @@ let pwd_length = document.getElementById("slider");
 
 
 generate.addEventListener('click', () => {
+    $('.alert').hide();
     let password = "";
     let checkedSymbols = document.getElementById("checkbox_symbols").checked;
     let checkedUpperCase = document.getElementById("checkbox_uppercase").checked;
@@ -28,12 +33,18 @@ generate.addEventListener('click', () => {
     if (checkedNumbers) {
       final_string += numbers;
     }
-    for (let i = 0; i < pwd_length.value; i++) {
+    if (final_string !== "") {
+      for (let i = 0; i < pwd_length.value; i++) {
         let pwd = final_string[Math.floor(Math.random() * final_string.length)];
         password += pwd;
     }
     password_ele.innerText = password;
     final_string = string;
+    }
+    else {
+      $('.alert').show();
+    }
+
 });
 
 
@@ -48,3 +59,5 @@ clipboard.addEventListener('click', () => {
 
 
   $('.toast').toast();
+
+});
