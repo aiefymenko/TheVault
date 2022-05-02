@@ -4,83 +4,79 @@ main {
   background-color: $offWhite;
   height: 100vh;
   padding: 40px 0;
+}
 
-  .form-container {
-    display: flex;
-    width: 70%;
-    height: 450px;
-    margin: auto;
-    background-color: white;
-    border: 1px solid $mainRed;
-    border-radius: 20px;
-    box-shadow: 10px 15px $boxShadow;
-    padding: 20px 30px;
+.form-container {
+  display: flex;
+  width: 70%;
+  height: 450px;
+  margin: auto;
+  background-color: white;
+  border: 1px solid $mainRed;
+  border-radius: 20px;
+  box-shadow: 10px 15px $boxShadow;
+  padding: 20px 30px;
+}
 
+.new-form {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  width: 50%;
+  align-content: space-between;
+  justify-content: center;
 
-    .new-form {
-      display: flex;
-      height: 100%;
-      flex-direction: column;
-      width: 50%;
-      align-content: space-between;
-      justify-content: center;
+  h3 {
+    font-family: $fontForm;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
 
-      h3 {
-        font-family: $fontForm;
-        text-align: center;
-        padding-bottom: 20px;
-      }
+.form-labels {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
 
-      .form-labels {
-        display: flex;
-        flex-direction: column;
-        align-content: space-around;
+.fields {
+  display: flex;
+  justify-content: space-between;
 
-        .fields {
-          display: flex;
-          justify-content: space-between;
-        }
-
-        label {
-          font-family: $fontForm;
-          text-align: center;
-        }
-
-        .input {
-          padding: 5px;
-          margin-right: 50px;
-          margin-bottom: 10px;
-          width: 70%;
-          border: 1px solid $mainRed;
-        }
-
-        .select {
-
-          color: rgba(0, 0, 0, 0.59);
-        }
-      }
-
-      .buttons {
-        display: flex;
-        justify-content: space-evenly;
-
-        .btn {
-          margin-top: 15px;
-          text-align: center;
-          background-color: $mainRed;
-          color: $offWhite;
-          width: 40%;
-        }
-      }
-
-    }
-
-    .image {
-      display: flex;
-      align-items: center;
-      margin: 0 auto;
-    }
+  label {
+    font-family: $fontForm;
+    text-align: center;
   }
 
+  .input {
+    padding: 5px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    width: 70%;
+    border: 1px solid $mainRed;
+  }
 
+  .select {
+    color: rgba(0, 0, 0, 0.59);
+  }
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+
+  .btn {
+    margin-top: 15px;
+    text-align: center;
+    background-color: $mainRed;
+    color: $offWhite;
+    width: 40%;
+  }
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
 }
