@@ -1,15 +1,18 @@
 // show and hide password
 
-$('.eye-open').on('click', () => {
-  $('.eye-open').addClass('hide');
-  $('.eye-closed').removeClass('hide');
-  $('.hidden-pw').addClass('hide');
-  $('.visiable-pw').removeClass('hide');
-});
+$('.eye-open').on('click', function() {
+  const index = $(this).index('.eye-open');
+  console.log('index:', index)
+  $('.eye-open').eq(index).addClass('hide');
+  $('.eye-closed').eq(index).removeClass('hide');
+  $('.hidden-pw').eq(index).addClass('hide');
+  $('.visiable-pw').eq(index).removeClass('hide');
+})
 
-$('.eye-closed').on('click', () => {
-  $('.eye-closed').addClass('hide');
-  $('.eye-open').removeClass('hide');
-  $('.visiable-pw').addClass('hide');
-  $('.hidden-pw').removeClass('hide');
-});
+$('.eye-closed').on('click', function() {
+  const index = $(this).index('.eye-closed');
+  $('.eye-closed').eq(index).addClass('hide');
+  $('.eye-open').eq(index).removeClass('hide');
+  $('.visiable-pw').eq(index).addClass('hide');
+  $('.hidden-pw').eq(index).removeClass('hide');
+})
