@@ -34,7 +34,7 @@
 <body>
   <%- include ('partials/_header', {user}, {org}) %>
   <main>
-    <h3>Accounts</h3>
+    <h3><%=org.name%> Accounts</h3>
     <div class="main-container">
       <% for(let i=0; i< accounts.length; i++) { %>
         <div class="cards">
