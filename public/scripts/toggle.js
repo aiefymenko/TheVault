@@ -24,13 +24,4 @@ $(document).ready(function() {
     window.history.back();
   });
 
-  // this to to toggle edit page from input to a select
-  $('.category').on('click', function() {
-    $('.category').addClass('hide');
-    $('.select').removeClass('hide');
-  })
 });
-
-
-// class category
-// class select
