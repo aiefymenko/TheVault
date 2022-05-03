@@ -30,37 +30,37 @@ generate.addEventListener('click', () => {
 
     if (checkedNumber) {
       finalPassword += numbers;
-      // console.log(finalPassword);
     }
     if (checkedUpperCase) {
       finalPassword += upperCase;
-      // console.log(finalPassword);
     }
     if (checkedLowerCase) {
       finalPassword += lowerCase;
-      // console.log(finalPassword);
     }
     if (checkedSymbol) {
       finalPassword += symbols;
-      console.log(finalPassword);
     }
     if (finalPassword !== "") {
-      // console.log(passwordLength.value);
+      console.log(finalPassword);
+      console.log(passwordLength.value);
       for (let i = 0; i < passwordLength.value; i++) {
-        passwordToPaste += finalPassword.charAt(Math.floor(Math.random() * passwordLength.value));
+        passwordToPaste += finalPassword.charAt(Math.floor(Math.random() * finalPassword.length));
       }
-
-
+      password.innerHTML = passwordToPaste;
+      finalPassword = passwordEmpty;
+    } else {
+      $('.alert').show();
     }
-    console.log(passwordToPaste);
-    password.innerHTML = passwordToPaste;
-    finalPassword = passwordEmpty;
-
 
 });
 
-
-
-  // $('.toast').toast();
+// copy password when clipboard clicked
+copy.addEventListener('click', () => {
+    navigator.clipboard.writeText(password.innerHTML);
+    navigator.clipboard.readText().then(
+      clipText => {
+      $('#liveToast').toast('show');
+    });
+});
 
 });
