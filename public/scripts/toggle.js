@@ -1,18 +1,24 @@
 // show and hide password
+$(document).ready(function() {
+  $('.eye-open').on('click', function() {
+    const index = $(this).index('.eye-open');
+    $('.eye-open').eq(index).addClass('hide');
+    $('.eye-closed').eq(index).removeClass('hide');
+    $('.hidden-pw').eq(index).addClass('hide');
+    $('.visiable-pw').eq(index).removeClass('hide');
+  })
 
-$('.eye-open').on('click', function() {
-  const index = $(this).index('.eye-open');
-  console.log('index:', index)
-  $('.eye-open').eq(index).addClass('hide');
-  $('.eye-closed').eq(index).removeClass('hide');
-  $('.hidden-pw').eq(index).addClass('hide');
-  $('.visiable-pw').eq(index).removeClass('hide');
-})
+  $('.eye-closed').on('click', function() {
+    const index = $(this).index('.eye-closed');
+    $('.eye-closed').eq(index).addClass('hide');
+    $('.eye-open').eq(index).removeClass('hide');
+    $('.visiable-pw').eq(index).addClass('hide');
+    $('.hidden-pw').eq(index).removeClass('hide');
+  })
 
-$('.eye-closed').on('click', function() {
-  const index = $(this).index('.eye-closed');
-  $('.eye-closed').eq(index).addClass('hide');
-  $('.eye-open').eq(index).removeClass('hide');
-  $('.visiable-pw').eq(index).addClass('hide');
-  $('.hidden-pw').eq(index).removeClass('hide');
-})
+  // go back previous page
+  $("#back-btn").on('click', () => {
+    console.log('clicked')
+    window.history.back();
+  });
+});
