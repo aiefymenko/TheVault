@@ -1,0 +1,22 @@
+@import "_variables";
+
+.alert {
+  padding: 20px;
+  background-color: $mainRed;
+  color: $offWhite;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: $offWhite;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
