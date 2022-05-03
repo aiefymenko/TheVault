@@ -1,5 +1,7 @@
 // show and hide password
 $(document).ready(function() {
+
+  // show and hide password on accounts page
   $('.eye-open').on('click', function() {
     const index = $(this).index('.eye-open');
     $('.eye-open').eq(index).addClass('hide');
@@ -21,4 +23,5 @@ $(document).ready(function() {
     console.log('clicked')
     window.history.back();
   });
+
 });
