@@ -45,12 +45,18 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const loginRoutes = require("./routes/login");
 const accountRoutes = require("./routes/accounts");
+const accountNewRoutes = require("./routes/accountNew");
+const accountDeleteRoutes = require("./routes/accountDelete");
+const accountEditRoutes = require("./routes/accountEdit");
 const newpassRoutes = require("./routes/newpass");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/login/", loginRoutes(db));
 app.use("/accounts/", accountRoutes(db));
+app.use("/accounts/new/", accountNewRoutes(db));
+app.use("/accounts/delete/", accountDeleteRoutes(db));
+app.use("/accounts/edit/", accountEditRoutes(db));
 app.use("/newpass/", newpassRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
