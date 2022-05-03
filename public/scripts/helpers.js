@@ -5,7 +5,6 @@ navigator.clipboard.writeText(copyText);
   /* Alert the copied text */
 navigator.clipboard.readText().then(
     clipText => {
-      $('.toast-body').html(copyText)
       $('#liveToast').toast('show')
     });
 
@@ -18,7 +17,6 @@ const copyPasswordToClickBoard = (id) => {
     /* Alert the copied text */
     navigator.clipboard.readText().then(
       clipText => {
-       $('.toast-body').html()
       $('#liveToast').toast('show')
     });
   }
