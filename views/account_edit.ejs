@@ -40,16 +40,16 @@
               </div>
               <div class="fields">
                 <label for="category">Category</label>
-                <input class="input" type="text" name="category" value = "<%=account.category_name%>">
+                <input class="input category" type="text" name="category" value="<%=account.category_name%>">
                 <!-- add in when selected put the select feature -->
-                <!-- <label for="category">Category</label>
-                <select class="input select" name="category" id="category" value="<%=account.category%>">
-                  <option class="social" value="Social Media">Social Media</option>
-                  <option class="shopping" value="Shopping">Shopping</option>
-                  <option class="email" value="Email">Email</option>
-                  <option class="streaming" value="Online Streaming">Online Streaming</option>
-                  <option  class="education" value="Education">Education</option>
-                </select> -->
+                <select class="input select hide" name="category" id="category" value="<%=account.category%>">
+                  <option value="social">Social</option>
+                  <option value="shopping">Shopping</option>
+                  <option value="email">Email</option>
+                  <option value="streaming">Streaming</option>
+                  <option value="education">Education</option>
+                  <option value="other">Other</option>
+                </select>
                 </div>
               <!-- <input class="input" type="text" name="category"> -->
               <div class="fields">
