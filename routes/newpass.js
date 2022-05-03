@@ -13,8 +13,8 @@ const cookieSession = require('cookie-session');
 module.exports = (db) => {
   router.get("/", (req, res) => {
     const org = { name: req.session.org };
-    const user = { id: req.session.user_id };
-    const templateVars = {user: user, org: org };
+    const user = { name: req.session.username };
+    const templateVars = { user: user, org: org };
     res.render("newpass", templateVars);
 
   });
