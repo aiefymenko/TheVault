@@ -20,5 +20,3 @@ const copyPasswordToClickBoard = (id) => {
       $('#liveToast').toast('show')
     });
   }
-
-  $('.toast').toast();
