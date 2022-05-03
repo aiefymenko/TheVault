@@ -8,7 +8,7 @@ const symbols = "!@#$%^&*_+=?.,><|";
 const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 // getting the value of our slider
-let passwordLength = document.getElementById("slider").value;
+let passwordLength = document.getElementById("slider");
 const password = document.getElementById("password");
 const generate = document.getElementById("generate");
 const copy = document.getElementById("copy");
@@ -28,19 +28,25 @@ generate.addEventListener('click', () => {
 
     if (checkedNumber) {
       finalPassword += numbers;
-      console.log(finalPassword);
+      // console.log(finalPassword);
     }
     if (checkedUpperCase) {
       finalPassword += upperCase;
-      console.log(finalPassword);
+      // console.log(finalPassword);
     }
     if (checkedLowerCase) {
       finalPassword += lowerCase;
-      console.log(finalPassword);
+      // console.log(finalPassword);
     }
     if (checkedSymbol) {
       finalPassword += symbols;
-      console.log(finalPassword);
+      // console.log(finalPassword);
+    }
+    if (finalPassword !== "") {
+      console.log(passwordLength.value);
+      for (let i = 0; i < passwordLength.value; i++) {
+
+      }
     }
 
 
