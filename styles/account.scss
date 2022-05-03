@@ -67,9 +67,24 @@ main {
 
   p {
     font-weight: 500;
+    padding-right: 10px;
   }
 
 }
+
+.username {
+  display: flex;
+  width: 100%;
+}
+
+.pw {
+  display: flex;
+
+  p {
+    padding-right: 15px;
+  }
+}
+
 
 .password {
   margin-top: 10px;

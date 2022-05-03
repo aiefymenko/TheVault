@@ -45,17 +45,21 @@
             <a class="link" href="https://<%= accounts[i].url %>" target="blank"><%= accounts[i].url %></a>
             <p><%= accounts[i].category %></p>
           </div>
-          <div class="username user-pass">
-            <p>Username:</p>
-            <span id="<%=i%>"><%= accounts[i].username %></span>
+          <div class="user-pass">
+            <div class="username">
+              <p>Username:</p>
+              <span id="<%=i%>"><%= accounts[i].username %></span>
+            </div>
             <button type="button" class="btn btn-outline-primary" onclick="copyUsernameToClickBoard('<%=i%>')">
               <span class="bi bi-clipboard"></span>
             </button>
           </div>
           <div class="password user-pass">
-            <p>Password:</p>
-            <span  class="visiable-pw hide" id="i<%=i%>"><%= accounts[i].password %></span>
-            <input class="hidden-pw" id="i<%=i%>" type="password" name="pass" value="<%= accounts[i].password %>" readonly>
+            <div class="pw">
+              <p>Password:</p>
+              <span  class="visiable-pw hide" id="i<%=i%>"><%= accounts[i].password %></span>
+              <input class="hidden-pw" id="i<%=i%>" type="password" name="pass" value="<%= accounts[i].password %>" readonly>
+            </div>
             <div class="pass-btn">
               <i class="fa-solid fa-eye eye-open"></i>
               <i class="fa-solid fa-eye-slash eye-closed hide"></i>
