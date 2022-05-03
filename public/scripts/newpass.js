@@ -49,9 +49,12 @@ generate.addEventListener('click', () => {
       for (let i = 0; i < passwordLength.value; i++) {
         passwordToPaste += finalPassword.charAt(Math.floor(Math.random() * passwordLength.value));
       }
-      console.log(passwordToPaste);
-      finalPassword = passwordEmpty;
+
+
     }
+    console.log(passwordToPaste);
+    password.innerHTML = passwordToPaste;
+    finalPassword = passwordEmpty;
 
 
 });
