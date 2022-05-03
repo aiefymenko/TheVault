@@ -32,8 +32,6 @@ module.exports = (db) => {
         const user = { name: data.rows[0].user_name };
         const templateVars = { accounts: accounts, user: user, org: org };
 
-        console.log(accounts);
-
         res.render("account", templateVars);
       })
       .catch(err => {
