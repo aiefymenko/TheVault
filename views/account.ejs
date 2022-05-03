@@ -26,6 +26,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript" src="/scripts/toggle.js"></script>
+  <script type="text/javascript" src="/scripts/categories.js"></script>
 
   <title>The Vault</title>
 
@@ -34,16 +35,29 @@
 <body>
   <%- include ('partials/_header', {user}, {org}) %>
   <main>
-    <h3><%=org.name%> Accounts</h3>
+    <div class="top-info">
+      <h3><%=org.name%> Accounts</h3>
+      <div class="tab-panel">
+        <ul class="tabs">
+          <li class="All active">All</li>
+          <li class="Social">Social</li>
+          <li class="Shopping">Shopping</li>
+          <li class="Email">Email</li>
+          <li class="Streaming">Streaming</li>
+          <li class="Education">Education</li>
+          <li class="other">Other</li>
+        </ul>
+      </div>
+    </div>
     <div class="main-container">
       <% for(let i=0; i< accounts.length; i++) { %>
-        <div class="cards">
+        <div id="<%= accounts[i].category %>" class="cards">
           <div class="org-name">
             <h4><%= accounts[i].name %></h4>
           </div>
           <div class="site-category">
             <a class="link" href="https://<%= accounts[i].url %>" target="blank"><%= accounts[i].url %></a>
-            <p><%= accounts[i].category %></p>
+            <!-- <p><%= accounts[i].category %></p> -->
           </div>
           <div class="user-pass">
             <div class="username">
