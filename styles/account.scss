@@ -20,6 +20,10 @@ main {
     padding-left: 15px;
     cursor: pointer;
   }
+
+  li:hover {
+    color: #007bff;;
+  }
 }
 
 
@@ -62,9 +66,10 @@ main {
   justify-content: space-evenly;
   font-family: $fontForm;
   font-size: 1.2rem;
+  padding-bottom: 20px;
 
   .link {
-    color: black;
+    // color: black;
     text-decoration: none;
     font-family: $fontForm;
   }
@@ -127,6 +132,11 @@ main {
 
 .show {
   display: block;
+}
+
+.active {
+  font-weight: 900;
+  color: $mainRed
 }
 
 
