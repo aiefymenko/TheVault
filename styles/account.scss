@@ -3,13 +3,27 @@
 main {
   background-color: $offWhite;
   min-height: 100vh;
+}
 
-  h3 {
-    text-align: center;
-    padding: 20px 0;
+// Account title and tabs links
+.top-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.tabs{
+  display: flex;
+  list-style: none;
+  li {
+    padding-left: 15px;
+    cursor: pointer;
   }
 }
 
+
+// holds all the cards information
 .main-container {
   width: 90%;
   margin: auto;
@@ -109,6 +123,10 @@ main {
 
 .hide {
   display: none;
+}
+
+.show {
+  display: block;
 }
 
 
