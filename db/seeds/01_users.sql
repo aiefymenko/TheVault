@@ -1,11 +1,7 @@
--- Users table seeds here (Example)
--- INSERT INTO users (name) VALUES ('Alice');
--- INSERT INTO users (name) VALUES ('Kira');
-
-INSERT INTO categories (name) VALUES ('Social Media');
+INSERT INTO categories (name) VALUES ('Social');
 INSERT INTO categories (name) VALUES ('Shopping');
 INSERT INTO categories (name) VALUES ('Email');
-INSERT INTO categories (name) VALUES ('Online Streaming');
+INSERT INTO categories (name) VALUES ('Streaming');
 INSERT INTO categories (name) VALUES ('Education');
 
 INSERT INTO orgs (name) VALUES ('Lighthouse Lab');
