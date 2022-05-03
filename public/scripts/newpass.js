@@ -12,19 +12,34 @@ let passwordLength = document.getElementById("slider").value;
 const password = document.getElementById("password");
 const generate = document.getElementById("generate");
 const copy = document.getElementById("copy");
-// checking if any of the checkboxes are checked
-let checkedNumber = document.getElementById("number").checked;
-let checkedUpperCase = document.getElementById("upper").checked;
-let checkedLowerCase = document.getElementById("lower").checked;
-let checkedSymbol = document.getElementById("symbol").checked;
+
+
 
 
 // Add eventlistener on click at 'generate' ID
 generate.addEventListener('click', () => {
     $('.alert').hide();
+    // checking if any of the checkboxes are checked
     let finalPassword = "";
+    let checkedNumber = document.getElementById("number").checked;
+    let checkedUpperCase = document.getElementById("upper").checked;
+    let checkedLowerCase = document.getElementById("lower").checked;
+    let checkedSymbol = document.getElementById("symbol").checked;
+
     if (checkedNumber) {
       finalPassword += numbers;
+      console.log(finalPassword);
+    }
+    if (checkedUpperCase) {
+      finalPassword += upperCase;
+      console.log(finalPassword);
+    }
+    if (checkedLowerCase) {
+      finalPassword += lowerCase;
+      console.log(finalPassword);
+    }
+    if (checkedSymbol) {
+      finalPassword += symbols;
       console.log(finalPassword);
     }
 
