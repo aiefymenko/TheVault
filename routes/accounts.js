@@ -14,7 +14,7 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
 
     const queryString = `
-    SELECT accounts.*, categories.name as category, orgs.name as org, orgs.id as org_id
+    SELECT accounts.*, categories.name as category, orgs.name as org, orgs.id as org_id, users.name as username
     FROM users JOIN orgs ON users.org_id = orgs.id JOIN accounts ON orgs.id = accounts.org_id JOIN categories ON categories.id = accounts.category_id
     WHERE users.id = $1
     `;
@@ -25,10 +25,11 @@ module.exports = (db) => {
       .then(data => {
         req.session.org = data.rows[0].org;
         req.session.org_id = data.rows[0].org_id;
+        req.session.username = data.rows[0].username;
 
         const accounts = data.rows;
         const org = { name: data.rows[0].org, id: data.rows[0].org_id };
-        const user = { id: req.params.id };
+        const user = { name: data.rows[0].username };
         const templateVars = { accounts: accounts, user: user, org: org };
 
         res.render("account", templateVars);
@@ -44,7 +45,7 @@ module.exports = (db) => {
   router.get("/new", (req, res) => {
 
     const org = { name: req.session.org };
-    const user = { id: req.session.user_id };
+    const user = { name: req.session.username };
 
     const templateVars = { user: user, org: org };
     res.render("account_new", templateVars);
@@ -163,7 +164,7 @@ module.exports = (db) => {
 
         const account = data.rows[0];
         const org = { name: req.session.org };
-        const user = { id: req.session.user_id };
+        const user = { name: req.session.username };
         const templateVars = { account: account, user: user, org: org };
 
         res.render("account_edit", templateVars);
