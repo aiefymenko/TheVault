@@ -14,9 +14,8 @@ header {
     justify-content: space-between;
 }
 
-.title {
+.title-links {
   display: flex;
-  // flex-direction: row;
   align-items: center;
 
   img {
@@ -30,6 +29,7 @@ header {
     font-weight: 600;
     color: $offWhite;
     margin-right: 20px;
+    margin-bottom: 0;
     text-decoration: $noUnderline;
   }
 }

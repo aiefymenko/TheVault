@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
   $('.tab-panel .tabs li').on('click', function() {
-    // checks for the tab icon clicked
 
+    // checks for the tab icon clicked
     const visiableTab = $(this).attr('class');
 
     //loops through all cards
@@ -12,10 +12,8 @@ $(document).ready(function() {
 
       //finds the card from the index id
       if($('.cards').eq(index).attr('id') === visiableTab) {
-        // alert(index + $('.cards').eq(index).attr('id'))
         $('.cards').eq(index).removeClass('hide');
       } else {
-        // $('.cards').eq(index).removeClass('show');
         $('.cards').eq(index).addClass('hide');
       }
     })
