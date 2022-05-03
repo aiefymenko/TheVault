@@ -64,14 +64,15 @@ main {
 
 .buttons {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  padding: 0 10px;
 
   .btn {
     margin-top: 15px;
-    text-align: center;
+    margin-left: 10px;
     background-color: $mainRed;
     color: $offWhite;
-    width: 40%;
+    width: 30%;
   }
 }
 
