@@ -44,6 +44,7 @@ generate.addEventListener('click', () => {
       console.log(finalPassword);
       console.log(passwordLength.value);
       for (let i = 0; i < passwordLength.value; i++) {
+        // generating the password using criteria
         passwordToPaste += finalPassword.charAt(Math.floor(Math.random() * finalPassword.length));
       }
       password.innerHTML = passwordToPaste;
@@ -56,11 +57,14 @@ generate.addEventListener('click', () => {
 
 // copy password when clipboard clicked
 copy.addEventListener('click', () => {
+  // check the password field to avoid copy anything other than password
+  if (password.innerHTML !== "Here is your password") {
     navigator.clipboard.writeText(password.innerHTML);
     navigator.clipboard.readText().then(
       clipText => {
       $('#liveToast').toast('show');
     });
+  }
 });
 
 });
