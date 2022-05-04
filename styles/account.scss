@@ -8,14 +8,29 @@ main {
 // Account title and tabs links
 .top-info {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 20px;
+}
+
+.account-tabs {
+    font-family: $fontForm;
+      h2 {
+        margin-bottom: 0;
+      }
+}
+
+.account-tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .tabs{
   display: flex;
   list-style: none;
+  margin-bottom: 0;
+
+
   li {
     padding-left: 15px;
     cursor: pointer;
@@ -24,6 +39,14 @@ main {
   li:hover {
     color: #007bff;;
   }
+}
+
+.which-tab {
+  font-size: 1.4rem;
+  padding: 20px 0;
+  text-align: center;
+  font-weight: 700;
+  color: $mainRed;
 }
 
 
@@ -128,15 +151,6 @@ main {
 
 .hide {
   display: none;
-}
-
-.show {
-  display: block;
-}
-
-.active {
-  font-weight: 900;
-  color: $mainRed
 }
 
 
