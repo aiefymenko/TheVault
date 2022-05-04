@@ -26,9 +26,8 @@
 
     <main>
       <div class="form-container">
-        <div class="new-form">
           <h3>Create New Account</h3>
-          <form class="" action="/accounts/new" method="POST">
+          <form class="form" action="/accounts/new" method="POST">
             <div class="form-labels">
               <div class="fields">
                 <label for="url">URL</label>
@@ -40,14 +39,7 @@
               </div>
               <div class="fields">
                 <label for="category">Category</label>
-                <select class="input select" name="category" id="category">
-                  <option value="social">Social</option>
-                  <option value="shopping">Shopping</option>
-                  <option value="email">Email</option>
-                  <option value="streaming">Streaming</option>
-                  <option value="education">Education</option>
-                  <option value="other">Other</option>
-                </select>
+                <input class="input" type="text" name="category">
                 </div>
               <div class="fields">
                 <label for="username">Username</label>
@@ -57,16 +49,12 @@
                 <label for="password">Password</label>
                 <input class="input" type="text" name="password">
               </div>
+            </div>
               <div class="buttons">
                 <a class="btn" href="/accounts">Cancel</a>
                 <button type="submit" class="btn">Submit</button>
               </div>
-            </div>
           </form>
-        </div>
-        <div class="image">
-          <img src="https://www.hexamail.com/hexamailvault/images/slidersplash.jpg" alt="">
-        </div>
       </div>
     </main>
 
