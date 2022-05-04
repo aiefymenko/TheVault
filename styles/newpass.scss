@@ -5,15 +5,14 @@ main{
  background-color: white;
  display: flex;
  align-items: center;
- justify-content: center;
  flex-direction: column;
- height: 450px;
+ min-height: 100vh;
 }
 .main-container:hover {
   box-shadow: $boxShadow;
 }
 .main-container{
-    width: 400px;
+    width: 50%;
     background-color: white;
     border: 1px solid $mainRed;
     border-radius: 20px;
