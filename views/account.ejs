@@ -36,19 +36,23 @@
   <%- include ('partials/_header', {user}, {org}) %>
   <main>
     <div class="top-info">
-      <h3><%=org.name%> Accounts</h3>
-      <div class="tab-panel">
-        <ul class="tabs">
-          <li class="All active">All</li>
-          <li class="Social">Social</li>
-          <li class="Shopping">Shopping</li>
-          <li class="Email">Email</li>
-          <li class="Streaming">Streaming</li>
-          <li class="Education">Education</li>
-          <li class="Other">Other</li>
-        </ul>
+      <div class="account-tabs">
+        <h2><%=org.name%> Accounts</h2>
+        <div class="tab-panel">
+          <ul class="tabs">
+            <li class="All">All</li>
+            <li class="Social">Social</li>
+            <li class="Shopping">Shopping</li>
+            <li class="Email">Email</li>
+            <li class="Streaming">Streaming</li>
+            <li class="Education">Education</li>
+            <li class="Other">Other</li>
+          </ul>
+        </div>
       </div>
+      <div class="which-tab"></div>
     </div>
+
     <div class="main-container">
       <% for(let i=0; i< accounts.length; i++) { %>
         <div id="<%= accounts[i].category %>" class="cards">
@@ -92,6 +96,7 @@
         </div>
       <% } %>
     </div>
+
     <div class="position-fixed top-0 right-0 p-3" style="z-index: 5; right: 45%; top: 2%;">
       <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
         <div class="toast-header">

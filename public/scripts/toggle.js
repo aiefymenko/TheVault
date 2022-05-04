@@ -18,10 +18,4 @@ $(document).ready(function() {
     $('.hidden-pw').eq(index).removeClass('hide');
   })
 
-  // go back previous page
-  $("#back-btn").on('click', () => {
-    console.log('clicked')
-    window.history.back();
-  });
-
 });

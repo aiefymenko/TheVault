@@ -3,21 +3,37 @@
 main {
   min-height: 100vh;
   background-image: url("https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg");
-  background-repeat: repeat-y;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 // Account title and tabs links
 .top-info {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 20px;
   color: rgba(255, 255, 255, 0.871);
+}
+
+.account-tabs {
+    font-family: $fontForm;
+      h2 {
+        margin-bottom: 0;
+      }
+}
+
+.account-tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .tabs{
   display: flex;
   list-style: none;
+  margin-bottom: 0;
+
+
   li {
     padding-left: 15px;
     cursor: pointer;
@@ -26,6 +42,13 @@ main {
   li:hover {
     color: #007bff;;
   }
+}
+
+.which-tab {
+  font-size: 1.4rem;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: 900;
 }
 
 
@@ -43,9 +66,8 @@ main {
   flex-direction: column;
   align-items: space-between;
   padding: 20px;
-  border: 1px solid $mainRed;
   border-radius: 20px;
-  background-color: white;
+  background-color: #f1f1f1;
   margin-bottom: 20px;
   width: 40%
 }
@@ -71,7 +93,6 @@ main {
   padding-bottom: 20px;
 
   .link {
-    // color: black;
     text-decoration: none;
     font-family: $fontForm;
   }
@@ -104,6 +125,10 @@ main {
   p {
     padding-right: 15px;
   }
+
+  input {
+    background-color: #f1f1f1;
+  }
 }
 
 
@@ -130,15 +155,6 @@ main {
 
 .hide {
   display: none;
-}
-
-.show {
-  display: block;
-}
-
-.active {
-  font-weight: 900;
-  color: $mainRed
 }
 
 

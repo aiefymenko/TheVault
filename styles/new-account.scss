@@ -1,64 +1,41 @@
 @import "_variables";
 
 main {
-  background-color: $offWhite;
   height: 100vh;
   padding: 40px 0;
   background-image: url("https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg");
-  background-repeat: repeat-y;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
 }
 
 .form-container {
-  display: flex;
-  width: 70%;
-  height: 450px;
-  margin: auto;
-  background-color: white;
-  border: 1px solid $mainRed;
-  border-radius: 20px;
-  box-shadow: 10px 15px $boxShadow;
-  padding: 20px 30px;
-}
-
-.new-form {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  width: 50%;
-  align-content: space-between;
-  justify-content: center;
+  width: 40%;
+  padding-left: 20px;
 
   h3 {
+    padding-bottom: 10px;
     font-family: $fontForm;
-    text-align: center;
-    padding-bottom: 20px;
   }
-}
-
-.form-labels {
-  display: flex;
-  flex-direction: column;
-  align-content: space-around;
 }
 
 .fields {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 20px;
 
   label {
+    margin:auto 0;
     font-family: $fontForm;
-    text-align: center;
-  }
-
-  .input {
-    padding: 5px;
-    margin-right: 50px;
-    margin-bottom: 10px;
-    width: 70%;
-    border: 1px solid $mainRed;
   }
 }
 
+.input {
+  width: 80%;
+  border: 2px solid $mainRed;
+  padding: 5px;
+
+}
 
 .buttons {
   display: flex;
@@ -67,19 +44,9 @@ main {
 
   .btn {
     margin-top: 15px;
-    margin-left: 10px;
+    margin-left: 40px;
     background-color: $mainRed;
     color: $offWhite;
     width: 30%;
   }
-}
-
-.image {
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.hide {
-  display: none;
 }
