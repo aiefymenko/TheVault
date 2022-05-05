@@ -19,8 +19,20 @@ main {
 .account-tabs {
     font-family: $fontForm;
       h2 {
+        font-size: 1.6rem;
         margin-bottom: 0;
       }
+}
+
+.search-bar {
+  display: flex;
+  padding: 5px;
+
+  input, button{
+    border: 1px solid $mainRed;
+    padding: 3px;
+  }
+
 }
 
 .account-tabs {
