@@ -12,16 +12,13 @@ let passwordLength = document.getElementById("slider");
 const password = document.getElementById("password");
 const generate = document.getElementById("generate");
 const copy = document.getElementById("copy");
-let passwordEmpty = "";
-
-
 
 
 // Add eventlistener on click at 'generate' ID
 generate.addEventListener('click', () => {
     $('.alert').hide();
     // checking if any of the checkboxes are checked
-    let finalPassword = passwordEmpty;
+    let finalPassword = "";
     let passwordToPaste = "";
     let checkedNumber = document.getElementById("number").checked;
     let checkedUpperCase = document.getElementById("upper").checked;
@@ -41,14 +38,12 @@ generate.addEventListener('click', () => {
       finalPassword += symbols;
     }
     if (finalPassword !== "") {
-      console.log(finalPassword);
-      console.log(passwordLength.value);
       for (let i = 0; i < passwordLength.value; i++) {
         // generating the password using criteria
         passwordToPaste += finalPassword.charAt(Math.floor(Math.random() * finalPassword.length));
       }
-      password.innerHTML = passwordToPaste;
-      finalPassword = passwordEmpty;
+      password.innerHTML = passwordToPaste.replace(/</g,'&lt;');
+      finalPassword = "";
     } else {
       $('.alert').show();
     }
