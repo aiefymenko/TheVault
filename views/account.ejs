@@ -38,6 +38,12 @@
     <div class="top-info">
       <div class="account-tabs">
         <h2><%=org.name%> Accounts</h2>
+
+        <form action="/accounts/search" method="GET">
+          <input class="search" type="text" name="text" placeholder="Search your accounts here">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+
         <div class="tab-panel">
           <ul class="tabs">
             <li class="All">All</li>
