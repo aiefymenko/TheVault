@@ -17,20 +17,33 @@ main {
 }
 
 .account-tabs {
-    font-family: $fontForm;
-      h2 {
-        font-size: 1.6rem;
-        margin-bottom: 0;
-      }
+  font-family: $fontForm;
+  display: flex;
+  justify-content: space-between;
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0;
+  }
 }
 
 .search-bar {
   display: flex;
-  padding: 5px;
+  margin: 0;
+
+  input {
+    width: 350px;
+  }
 
   input, button{
     border: 1px solid $mainRed;
-    padding: 3px;
+    padding: 5px;
+  }
+
+  button {
+    background-color: $mainRed;
+    margin-left: 5px;
+    padding: 3px 8px;
   }
 
 }
@@ -45,6 +58,7 @@ main {
   display: flex;
   list-style: none;
   margin-bottom: 0;
+  padding: 0;
 
 
   li {
