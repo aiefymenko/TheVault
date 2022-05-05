@@ -45,6 +45,7 @@ generate.addEventListener('click', () => {
       password.innerHTML = passwordToPaste.replace(/</g,'&lt;');
       finalPassword = "";
     } else {
+      password.innerHTML = "Here is your password";
       $('.alert').show();
     }
 
