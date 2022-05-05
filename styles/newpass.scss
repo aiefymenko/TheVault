@@ -7,13 +7,14 @@ main{
  align-items: center;
  flex-direction: column;
  min-height: 100vh;
+ color: black;
  margin-top: $marginTop;
 }
 .main-container:hover {
   box-shadow: $boxShadow;
 }
 .main-container{
-    width: 50%;
+    width: 30%;
     background-color: white;
     border: 1px solid $mainRed;
     border-radius: 20px;
@@ -36,6 +37,7 @@ main{
    padding: 1rem;
    border-bottom: 1px solid $mainRed;
    margin-bottom: 5px;
+   color: black;
 
  }
 
