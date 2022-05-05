@@ -14,8 +14,6 @@ const generate = document.getElementById("generate");
 const copy = document.getElementById("copy");
 
 
-
-
 // Add eventlistener on click at 'generate' ID
 generate.addEventListener('click', () => {
     $('.alert').hide();
