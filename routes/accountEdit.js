@@ -11,8 +11,10 @@ const cookieSession = require('cookie-session');
 
 module.exports = (db) => {
 
+  // Show account information based on passed in id
   router.get("/:id", (req, res) => {
 
+    // Query all account data for specific account
     const queryString = `
     SELECT accounts.*, categories.id as category_id, categories.name as category_name
     FROM accounts JOIN categories ON accounts.category_id = categories.id
@@ -20,7 +22,6 @@ module.exports = (db) => {
     `;
 
     const values = [req.params.id];
-
 
     db.query(queryString, values)
       .then(data => {
@@ -41,6 +42,7 @@ module.exports = (db) => {
   });
 
 
+  // Update account information for an account
   router.post("/:id", (req, res) => {
 
     const queryString = `
@@ -54,10 +56,9 @@ module.exports = (db) => {
 
     db.query(queryString, values)
       .then(data => {
+        //Category exists, will use the category id returned to update data
         if (data.rows[0]) {
-          //Category exists, will use the category id returned to update data "
 
-          //To be removed: E.g. INSERT INTO accounts (category_id, org_id, name, url, username, password) VALUES (1, 1, 'Facebook', 'www.facebook.com', 'lighthouse_lab@gmail.com', 'l1234567');
           const queryString1 = `
           UPDATE accounts SET category_id = $1, org_id = $2, name = $3, url = $4, username= $5, password =$6 WHERE id = $7;
           `;
@@ -74,9 +75,8 @@ module.exports = (db) => {
             });
 
         }
+        //category doesn't exist, will insert new record to category table
         else {
-          //category doesn't exist, will insert new record to category table"
-
           const queryString2 = `
           INSERT INTO categories (name) VALUES ($1)
           RETURNING id

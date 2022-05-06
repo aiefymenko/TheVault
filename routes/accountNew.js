@@ -33,8 +33,8 @@ module.exports = (db) => {
 
     db.query(queryString, values)
       .then(data => {
+        //Category exists, will use the category id returned to insert data
         if (data.rows[0]) {
-          //Category exists, will use the category id returned to insert data "
 
           const queryString1 = `
           INSERT INTO accounts (category_id, org_id, name, url, username, password) VALUES ($1, $2, $3, $4, $5, $6);
@@ -52,8 +52,8 @@ module.exports = (db) => {
             });
 
         }
+        // Category doesn't exist, will insert new record to category table
         else {
-          // Category doesn't exist, will insert new record to category table
 
           const queryString2 = `
           INSERT INTO categories (name) VALUES ($1)

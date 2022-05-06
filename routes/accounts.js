@@ -11,6 +11,7 @@ const cookieSession = require('cookie-session');
 
 module.exports = (db) => {
 
+  // Display all accounts
   router.get("/", (req, res) => {
 
     const queryString = `
@@ -23,6 +24,7 @@ module.exports = (db) => {
 
     db.query(queryString, values)
       .then(data => {
+        // Store org, org id and username in session
         req.session.org = data.rows[0].org;
         req.session.org_id = data.rows[0].org_id;
         req.session.username = data.rows[0].user_name;
@@ -30,7 +32,9 @@ module.exports = (db) => {
         const accounts = data.rows;
         const org = { name: data.rows[0].org, id: data.rows[0].org_id };
         const user = { name: data.rows[0].user_name };
+        // No keyword in search bar when user just logged in
         const keyword = { keyword: '' };
+        // Reset button for search bar is hidden when user just logged in
         const hidden = { visible: 'visibility: hidden' };
         const templateVars = { accounts: accounts, user: user, org: org, keyword: keyword, visible: hidden };
 
@@ -45,6 +49,7 @@ module.exports = (db) => {
 
   });
 
+  // Display accounts after user has entered keyword in search bar
   router.get("/search", (req, res) => {
 
     const queryString = `
@@ -66,8 +71,14 @@ module.exports = (db) => {
           const accounts = data.rows;
           const org = { name: data.rows[0].org, id: data.rows[0].org_id };
           const user = { name: data.rows[0].user_name };
+          // Save the keyword and display it in search bar so user knows the current result is filtered based on searched keyword
           const keyword = { keyword: req.query.text };
-          const visible = { visible: 'visibility: visible' };
+
+          // Show reset button to clear search result
+          let visible = { visible: 'visibility: hidden' };
+          if (req.query.text) {
+            visible = { visible: 'visibility: visible' };
+          }
 
           const templateVars = { accounts: accounts, user: user, org: org, keyword: keyword, visible: visible };
 
