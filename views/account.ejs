@@ -39,11 +39,15 @@
       <div class="account-tabs">
         <h2><%=org.name%> Accounts</h2>
 
-
-        <form class="search-bar" action="/accounts/search" method="GET">
-          <input class="search" type="text" name="text" value="<%= keyword.keyword %>" placeholder="Search your accounts here">
-          <button type="submit"><i class="fas fa-search"></i></button>
-        </form>
+        <div class = "search_group">
+          <form class="search-bar" action="/accounts/search" method="GET">
+            <input class="search" type="text" name="text" value="<%= keyword.keyword %>" placeholder="Search your accounts here">
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </form>
+          <form class="search-bar2" action="/accounts/" method="GET">
+            <button style = "<%= visible.visible %>" type="submit"><i class="fa-solid fa-eraser"></i></button>
+          </form>
+        </div>
 
         <div class="tab-panel">
           <ul class="tabs">

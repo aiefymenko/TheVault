@@ -31,7 +31,9 @@ module.exports = (db) => {
         const org = { name: data.rows[0].org, id: data.rows[0].org_id };
         const user = { name: data.rows[0].user_name };
         const keyword = { keyword: '' };
-        const templateVars = { accounts: accounts, user: user, org: org, keyword: keyword };
+        const hidden = { visible: 'visibility: hidden' };
+        const templateVars = { accounts: accounts, user: user, org: org, keyword: keyword, visible: hidden };
+
 
         res.render("account", templateVars);
       })
@@ -45,8 +47,6 @@ module.exports = (db) => {
 
   router.get("/search", (req, res) => {
 
-    console.log(req.query.text);
-
     const queryString = `
     SELECT accounts.*, categories.name as category, orgs.name as org, orgs.id as org_id, users.name as user_name
     FROM users JOIN orgs ON users.org_id = orgs.id JOIN accounts ON orgs.id = accounts.org_id JOIN categories ON categories.id = accounts.category_id
@@ -55,8 +55,6 @@ module.exports = (db) => {
     const text = '%' + req.query.text + '%';
 
     const values = [req.session.user_id, text];
-
-    console.log(values);
 
     db.query(queryString, values)
       .then(data => {
@@ -68,9 +66,10 @@ module.exports = (db) => {
           const accounts = data.rows;
           const org = { name: data.rows[0].org, id: data.rows[0].org_id };
           const user = { name: data.rows[0].user_name };
-          const keyword = { keyword: req.query.text }
+          const keyword = { keyword: req.query.text };
+          const visible = { visible: 'visibility: visible' };
 
-          const templateVars = { accounts: accounts, user: user, org: org, keyword: keyword };
+          const templateVars = { accounts: accounts, user: user, org: org, keyword: keyword, visible: visible };
 
           res.render("account", templateVars);
         }

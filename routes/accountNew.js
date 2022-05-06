@@ -34,9 +34,8 @@ module.exports = (db) => {
     db.query(queryString, values)
       .then(data => {
         if (data.rows[0]) {
-          console.log("Category exists, will use the category id returned to insert data ");
+          //Category exists, will use the category id returned to insert data "
 
-          //To be removed: E.g. INSERT INTO accounts (category_id, org_id, name, url, username, password) VALUES (1, 1, 'Facebook', 'www.facebook.com', 'lighthouse_lab@gmail.com', 'l1234567');
           const queryString1 = `
           INSERT INTO accounts (category_id, org_id, name, url, username, password) VALUES ($1, $2, $3, $4, $5, $6);
           `;
@@ -54,15 +53,13 @@ module.exports = (db) => {
 
         }
         else {
-          console.log("category doesn't exist, will insert new record to category table");
+          // Category doesn't exist, will insert new record to category table
 
-          //To be removed: E.g. INSERT INTO categories (name) VALUES ('Social Media');
           const queryString2 = `
           INSERT INTO categories (name) VALUES ($1)
           RETURNING id
           `;
           const values2 = [req.body.category];
-          console.log(values2);
 
           db.query(queryString2, values2)
             .then(data => {
