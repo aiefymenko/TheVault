@@ -94,7 +94,7 @@ main {
   align-items: space-between;
   padding: 20px;
   border-radius: 20px;
-  background-color: #f1f1f1;
+  background-color: $offWhite;
   margin-bottom: 20px;
   width: 40%
 }
@@ -154,7 +154,7 @@ main {
   }
 
   input {
-    background-color: #f1f1f1;
+    background-color: $offWhite;
   }
 }
 
