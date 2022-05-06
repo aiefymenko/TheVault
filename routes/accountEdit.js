@@ -55,15 +55,13 @@ module.exports = (db) => {
     db.query(queryString, values)
       .then(data => {
         if (data.rows[0]) {
-          console.log("Category exists, will use the category id returned to update data ");
+          //Category exists, will use the category id returned to update data "
 
           //To be removed: E.g. INSERT INTO accounts (category_id, org_id, name, url, username, password) VALUES (1, 1, 'Facebook', 'www.facebook.com', 'lighthouse_lab@gmail.com', 'l1234567');
           const queryString1 = `
           UPDATE accounts SET category_id = $1, org_id = $2, name = $3, url = $4, username= $5, password =$6 WHERE id = $7;
           `;
           const values1 = [data.rows[0].id, req.session.org_id, req.body.name, req.body.url, req.body.username, req.body.password, req.params.id];
-
-          console.log(values1);
 
           db.query(queryString1, values1)
             .then(data => {
@@ -77,22 +75,19 @@ module.exports = (db) => {
 
         }
         else {
-          console.log("category doesn't exist, will insert new record to category table");
+          //category doesn't exist, will insert new record to category table"
 
-          //To be removed: E.g. INSERT INTO categories (name) VALUES ('Social Media');
           const queryString2 = `
           INSERT INTO categories (name) VALUES ($1)
           RETURNING id
           `;
           const values2 = [req.body.category];
-          console.log(values2);
 
           db.query(queryString2, values2)
             .then(data => {
               const queryString3 = `
               UPDATE accounts SET category_id = $1, org_id = $2, name = $3, url = $4, username= $5, password =$6 WHERE id = $7;
               `;
-              console.log("hihi " + data.rows[0].id, req.session.org_id, req.body.name, req.body.url, req.body.username, req.body.password, req.params.id);
 
               const values3 = [data.rows[0].id, req.session.org_id, req.body.name, req.body.url, req.body.username, req.body.password, req.params.id];
 

@@ -184,6 +184,23 @@ main {
   display: none;
 }
 
-.search {
-  width: 300px;
+.search_group {
+  display: flex;
+}
+
+.search-bar2 {
+  display: flex;
+  margin: 0;
+
+  input, button{
+    border: 1px solid $mainRed;
+    padding: 5px;
+  }
+
+  button {
+    background-color: $mainRed;
+    margin-left: 5px;
+    padding: 3px 8px;
+  }
+
 }
