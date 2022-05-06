@@ -43,11 +43,14 @@ The app will let you generate a password using criteria in the app. The user can
 
 
 Logged In Page
+
 !["Logged In Page"](./docs/home.png)
 
 Edit Page
+
 !["Edit Page"](./docs/edit.png)
 
 Generate Password Page
+
 !["Generate Password Page"](./docs/generate.png)
 
