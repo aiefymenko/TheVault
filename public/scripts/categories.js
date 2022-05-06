@@ -25,6 +25,20 @@ $(document).ready(function() {
       }
     })
 
+    // show other accounts
+    if(visiableTab === 'Other') {
+      // Have to loop through again to get index all over again
+      $('.cards').each(function() {
+        const index = $(this).index('.cards');
+        // checks if card is other then any tab on top
+        if($('.cards').eq(index).attr('id') !== 'Social' && $('.cards').eq(index).attr('id') !== 'Shopping'&& $('.cards').eq(index).attr('id') !== 'Email' && $('.cards').eq(index).attr('id') !== 'Streaming' && $('.cards').eq(index).attr('id') !== 'Education') {
+          $('.cards').eq(index).removeClass('hide');
+        } else {
+          $('.cards').eq(index).addClass('hide');
+        }
+      })
+    }
+
   })
 
 });
