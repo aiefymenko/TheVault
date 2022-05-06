@@ -40,7 +40,7 @@
         <h2><%=org.name%> Accounts</h2>
 
         <form action="/accounts/search" method="GET">
-          <input class="search" type="text" name="text" placeholder="Search your accounts here">
+          <input class="search" type="text" name="text" value="<%= keyword.keyword %>" placeholder="Search your accounts here">
           <button type="submit"><i class="fas fa-search"></i></button>
         </form>
 
