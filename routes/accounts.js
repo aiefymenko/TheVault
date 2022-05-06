@@ -73,8 +73,12 @@ module.exports = (db) => {
           const user = { name: data.rows[0].user_name };
           // Save the keyword and display it in search bar so user knows the current result is filtered based on searched keyword
           const keyword = { keyword: req.query.text };
+
           // Show reset button to clear search result
-          const visible = { visible: 'visibility: visible' };
+          let visible = { visible: 'visibility: hidden' };
+          if (req.query.text) {
+            visible = { visible: 'visibility: visible' };
+          }
 
           const templateVars = { accounts: accounts, user: user, org: org, keyword: keyword, visible: visible };
 
