@@ -30,7 +30,8 @@ module.exports = (db) => {
         const accounts = data.rows;
         const org = { name: data.rows[0].org, id: data.rows[0].org_id };
         const user = { name: data.rows[0].user_name };
-        const templateVars = { accounts: accounts, user: user, org: org };
+        const keyword = { keyword: '' };
+        const templateVars = { accounts: accounts, user: user, org: org, keyword: keyword };
 
         res.render("account", templateVars);
       })
@@ -67,7 +68,9 @@ module.exports = (db) => {
           const accounts = data.rows;
           const org = { name: data.rows[0].org, id: data.rows[0].org_id };
           const user = { name: data.rows[0].user_name };
-          const templateVars = { accounts: accounts, user: user, org: org };
+          const keyword = { keyword: req.query.text }
+
+          const templateVars = { accounts: accounts, user: user, org: org, keyword: keyword };
 
           res.render("account", templateVars);
         }
